@@ -123,12 +123,20 @@ section{scroll-margin-top:68px}
 /* award */
 .award{background:var(--sand);padding:3.5rem 0}
 .award .wrap{display:flex;align-items:center;gap:2.2rem;max-width:900px}
-.award .medal{flex:0 0 auto;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d98a,#c9a23f 60%,#9c7a24);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3b2a05;font-family:"Playfair Display",serif;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.18),inset 0 0 0 4px rgba(255,255,255,.35);text-align:center;line-height:1.1}
-.award .medal .yr{font-size:1.5rem}.award .medal .lbl{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.award .medal{flex:0 0 auto;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d98a,#c9a23f 60%,#9c7a24);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3b2a05;font-family:"Playfair Display",serif;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.18),inset 0 0 0 4px rgba(255,255,255,.35);text-align:center;line-height:1.1}
+.award .medal .yr{font-size:2.1rem}.award .medal .lbl{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase}
 .award .eyebrow{color:var(--red);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:.3rem}
 .award h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
 .award p{margin:0 0 1.3rem;color:var(--ink)}
 @media(max-width:640px){.award .wrap{flex-direction:column;text-align:center}}
+
+.hero-medal{position:absolute;top:88px;right:28px;z-index:2;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d98a,#c9a23f 60%,#9c7a24);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3b2a05;font-family:"Playfair Display",serif;font-weight:700;text-align:center;line-height:1.1;text-decoration:none;text-shadow:none;box-shadow:0 8px 22px rgba(0,0,0,.35),inset 0 0 0 4px rgba(255,255,255,.35);animation:medalIn .8s .3s both;transition:transform .2s}
+.hero-medal:hover{transform:scale(1.05) rotate(-3deg)}
+.hero-medal .src{font-size:.62rem;letter-spacing:.05em;text-transform:uppercase}
+.hero-medal .lbl{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;margin:.2rem 0}
+.hero-medal .yr{font-size:1.9rem}
+@keyframes medalIn{from{opacity:0;transform:scale(.6) rotate(-15deg)}to{opacity:1;transform:none}}
+@media(max-width:640px){.hero-medal{width:104px;height:104px;top:80px;right:14px}.hero-medal .yr{font-size:1.4rem}.hero-medal .lbl{font-size:.65rem}.hero-medal .src{font-size:.5rem}}
 </style>
 </head>
 <body>
@@ -139,7 +147,7 @@ section{scroll-margin-top:68px}
 <a class="call" href="#book">Call to book</a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
+<header class="hero" id="top"><a class="hero-medal" href="#award" aria-label="Georgina Campbell 3-Star Hotel of the Year 2026"><span class="src">Georgina Campbell</span><span class="lbl">3-Star Hotel<br>of the Year</span><span class="yr">2026</span></a><div class="wrap">
 <div class="eyebrow">Glengarriff &middot; West Cork &middot; Since the 1880s</div>
 <h1>Casey's Hotel</h1>
 <p class="tag">A classic ivy-clad hotel in the heart of Glengarriff village, with comfortable rooms, an Irish restaurant and a cosy bar with live music.</p>
