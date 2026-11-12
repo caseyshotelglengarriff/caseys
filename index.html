@@ -96,6 +96,19 @@ section{padding:5rem 0}
 
 footer{background:#1f1f1f;color:#bbb;text-align:center;padding:2.5rem 1rem;font-size:.9rem}
 footer a{color:#ddd}
+
+/* text shadows */
+h1,h2,h3{text-shadow:0 2px 4px rgba(0,0,0,.18)}
+.hero,.hero h1,.hero p,.hero .eyebrow,.hero .rating{text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.book h2,.book p,.book .phone{text-shadow:0 2px 6px rgba(0,0,0,.35)}
+nav .brand,nav ul a{text-shadow:0 1px 4px rgba(0,0,0,.55)}
+nav.solid .brand,nav.solid ul a{text-shadow:0 1px 2px rgba(0,0,0,.12)}
+/* active menu underline */
+nav ul a{position:relative;padding-bottom:4px}
+nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:currentColor;transform:scaleX(0);transition:transform .25s}
+nav ul a:hover::after,nav ul a.active::after{transform:scaleX(1)}
+nav.solid ul a.active{color:var(--red)}
+section{scroll-margin-top:68px}
 </style>
 </head>
 <body>
@@ -212,6 +225,10 @@ footer a{color:#ddd}
 
 <div class="lightbox" id="lb"><img alt=""></div>
 <script>
+const links=[...document.querySelectorAll('nav ul a')];
+const act=()=>{let cur='';links.forEach(a=>{const sec=document.querySelector(a.getAttribute('href'));if(sec&&sec.getBoundingClientRect().top<=110)cur=a.getAttribute('href')});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===cur))};
+addEventListener('scroll',act);act();
+links.forEach(a=>a.addEventListener('click',()=>{links.forEach(l=>l.classList.remove('active'));a.classList.add('active')}));
 const nav=document.getElementById('nav');const s=()=>nav.classList.toggle('solid',scrollY>60);addEventListener('scroll',s);s();
 const lb=document.getElementById('lb'),li=lb.querySelector('img');
 document.querySelectorAll('.grid img').forEach(i=>i.onclick=()=>{li.src=i.src;li.alt=i.alt;lb.classList.add('open')});
