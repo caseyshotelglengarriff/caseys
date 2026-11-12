@@ -119,6 +119,16 @@ section{scroll-margin-top:68px}
 .book .phone-row .copy svg{width:22px;height:22px}
 .nw{white-space:nowrap;display:inline-block;max-width:100%}
 .card .nw{font-size:clamp(.82rem,3.8vw,.95rem)}
+
+/* award */
+.award{background:var(--sand);padding:3.5rem 0}
+.award .wrap{display:flex;align-items:center;gap:2.2rem;max-width:900px}
+.award .medal{flex:0 0 auto;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d98a,#c9a23f 60%,#9c7a24);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3b2a05;font-family:"Playfair Display",serif;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.18),inset 0 0 0 4px rgba(255,255,255,.35);text-align:center;line-height:1.1}
+.award .medal .yr{font-size:1.5rem}.award .medal .lbl{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.award .eyebrow{color:var(--red);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:.3rem}
+.award h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.award p{margin:0 0 1.3rem;color:var(--ink)}
+@media(max-width:640px){.award .wrap{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
@@ -136,6 +146,16 @@ section{scroll-margin-top:68px}
 <a class="btn btn-red" href="#book">Book direct</a><a class="btn btn-ghost" href="#gallery">See the hotel</a>
 <div class="rating"><span class="stars">★★★★★</span> 4.5 on Google from 525 reviews</div>
 </div></header>
+
+<section class="award" id="award"><div class="wrap">
+<div class="medal" aria-hidden="true"><span class="lbl">Hotel of<br>the Year</span><span class="yr">2026</span></div>
+<div>
+<div class="eyebrow">Award-Winning West Cork Hospitality</div>
+<h2>Georgina Campbell&rsquo;s 3-Star Hotel of the Year 2026</h2>
+<p>We are proud to be named Georgina Campbell&rsquo;s 3-Star Hotel of the Year 2026! Recognised by Ireland&rsquo;s longest-running independent hospitality awards for generations of genuine, hands-on hospitality, comfort, and great local food in the heart of Glengarriff.</p>
+<a class="btn btn-red" href="#book">Book Your Stay</a>
+</div>
+</div></section>
 
 <section id="about"><div class="wrap">
 <div class="intro">
