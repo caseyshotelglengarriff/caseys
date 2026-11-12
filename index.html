@@ -137,6 +137,32 @@ section{scroll-margin-top:68px}
 .hero-medal .yr{font-size:1.9rem}
 @keyframes medalIn{from{opacity:0;transform:scale(.6) rotate(-15deg)}to{opacity:1;transform:none}}
 @media(max-width:640px){.hero-medal{width:104px;height:104px;top:80px;right:14px}.hero-medal .yr{font-size:1.4rem}.hero-medal .lbl{font-size:.65rem}.hero-medal .src{font-size:.5rem}}
+
+/* 3D award badge */
+.badge{--s:150px;position:relative;display:block;width:var(--s);height:var(--s);flex:0 0 auto;font-size:calc(var(--s)*.1);text-decoration:none;text-shadow:none;transition:transform .35s;transform-style:preserve-3d}
+.badge:hover{transform:perspective(700px) rotateY(-14deg) rotateX(8deg) scale(1.04)}
+.badge .rib{position:absolute;top:58%;width:30%;height:62%;background:linear-gradient(180deg,#b52a2a,#7a1515 70%,#5e0f0f);clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%);box-shadow:0 4px 8px rgba(0,0,0,.3);filter:drop-shadow(0 4px 4px rgba(0,0,0,.35))}
+.badge .rib.l{left:20%;transform:rotate(16deg)}
+.badge .rib.r{right:20%;transform:rotate(-16deg)}
+.badge .m3d{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;overflow:hidden;
+ background:repeating-conic-gradient(from 0deg,#a87822 0deg 4deg,#f6dc85 4deg 8deg),radial-gradient(#f0cf6e,#a87822);
+ box-shadow:0 14px 28px rgba(0,0,0,.45),0 4px 8px rgba(0,0,0,.3),inset 0 3px 4px rgba(255,255,255,.7),inset 0 -5px 8px rgba(0,0,0,.45)}
+.badge .m3d::before{content:"";position:absolute;inset:6%;border-radius:50%;background:linear-gradient(160deg,#fff3c4,#d4a640 40%,#8a6418);box-shadow:inset 0 2px 2px rgba(255,255,255,.8),inset 0 -2px 3px rgba(0,0,0,.4)}
+.badge .face{position:relative;width:76%;height:76%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.05;
+ background:radial-gradient(circle at 32% 26%,#fff8d8 0%,#f3d47a 22%,#d1a23a 55%,#916818 100%);
+ box-shadow:inset 0 4px 8px rgba(0,0,0,.35),inset 0 -3px 4px rgba(255,255,255,.45),0 0 0 2px rgba(120,85,15,.6);
+ color:#4a3205;font-family:"Playfair Display",serif;font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.6),0 -1px 0 rgba(0,0,0,.25)}
+.badge .face::before{content:"";position:absolute;inset:7%;border-radius:50%;border:1px dashed rgba(90,60,8,.45)}
+.badge .src{font-size:.62em;letter-spacing:.06em;text-transform:uppercase;font-family:Lato,sans-serif;font-weight:700}
+.badge .stars{font-size:.9em;letter-spacing:.12em;color:#7a1515;margin:.15em 0}
+.badge .lbl{font-size:.72em;letter-spacing:.07em;text-transform:uppercase;max-width:80%}
+.badge .yr{font-size:1.75em;margin-top:.1em}
+.badge .m3d::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.65) 48%,transparent 60%);background-size:300% 100%;animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,55%{background-position:120% 0}100%{background-position:-60% 0}}
+.badge.hero-pos{position:absolute;top:92px;right:36px;z-index:2;--s:160px;animation:medalIn .9s .3s both}
+.badge.award-pos{--s:170px;margin-bottom:2.5rem}
+@keyframes medalIn{from{opacity:0;transform:perspective(700px) rotateY(90deg) scale(.6)}to{opacity:1;transform:none}}
+@media(max-width:640px){.badge.hero-pos{--s:108px;top:80px;right:14px}.badge.award-pos{--s:150px}}
 </style>
 </head>
 <body>
@@ -147,7 +173,7 @@ section{scroll-margin-top:68px}
 <a class="call" href="#book">Call to book</a>
 </div></nav>
 
-<header class="hero" id="top"><a class="hero-medal" href="#award" aria-label="Georgina Campbell 3-Star Hotel of the Year 2026"><span class="src">Georgina Campbell</span><span class="lbl">3-Star Hotel<br>of the Year</span><span class="yr">2026</span></a><div class="wrap">
+<header class="hero" id="top"><a class="badge hero-pos" href="#award" aria-label="Georgina Campbell 3-Star Hotel of the Year 2026"><span class="rib l"></span><span class="rib r"></span><span class="m3d"><span class="face"><span class="src">Georgina Campbell</span><span class="stars">★★★</span><span class="lbl">Hotel of the Year</span><span class="yr">2026</span></span></span></a><div class="wrap">
 <div class="eyebrow">Glengarriff &middot; West Cork &middot; Since the 1880s</div>
 <h1>Casey's Hotel</h1>
 <p class="tag">A classic ivy-clad hotel in the heart of Glengarriff village, with comfortable rooms, an Irish restaurant and a cosy bar with live music.</p>
@@ -156,7 +182,7 @@ section{scroll-margin-top:68px}
 </div></header>
 
 <section class="award" id="award"><div class="wrap">
-<div class="medal" aria-hidden="true"><span class="lbl">Hotel of<br>the Year</span><span class="yr">2026</span></div>
+<div class="badge award-pos" aria-hidden="true"><span class="rib l"></span><span class="rib r"></span><span class="m3d"><span class="face"><span class="src">Georgina Campbell</span><span class="stars">★★★</span><span class="lbl">Hotel of the Year</span><span class="yr">2026</span></span></span></div>
 <div>
 <div class="eyebrow">Award-Winning West Cork Hospitality</div>
 <h2>Georgina Campbell&rsquo;s 3-Star Hotel of the Year 2026</h2>
