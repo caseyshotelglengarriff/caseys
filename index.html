@@ -109,6 +109,14 @@ nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2
 nav ul a:hover::after,nav ul a.active::after{transform:scaleX(1)}
 nav.solid ul a.active{color:var(--red)}
 section{scroll-margin-top:68px}
+
+/* copy buttons */
+.copy{position:relative;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-left:.4rem;padding:4px;border:0;border-radius:6px;background:transparent;color:inherit;opacity:.65;cursor:pointer;transition:opacity .2s,background .2s}
+.copy:hover,.copy:focus-visible{opacity:1;background:rgba(127,127,127,.15)}
+.copy.done::after{content:"Copied";position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:#222;color:#fff;font-size:.75rem;padding:3px 8px;border-radius:4px;white-space:nowrap;text-shadow:none}
+.book .phone-row{display:flex;align-items:center;justify-content:center;gap:.3rem;margin-bottom:1.4rem}
+.book .phone-row .phone{margin-bottom:0}
+.book .phone-row .copy svg{width:22px;height:22px}
 </style>
 </head>
 <body>
@@ -189,7 +197,7 @@ section{scroll-margin-top:68px}
 <div class="eyebrow">Book direct</div>
 <h2>For bookings, please call us direct</h2>
 <p>For the best rate and to talk to us about your stay, please call the hotel directly. We'll be happy to help with rooms, dining and anything else you need.</p>
-<a class="phone" href="tel:+3532763010">+353 (0) 27 63010</a>
+<div class="phone-row"><a class="phone" href="tel:+3532763010">+353 (0) 27 63010</a><button class="copy" type="button" data-copy="+353 27 63010" title="Copy phone number" aria-label="Copy phone number"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
 <a class="btn btn-red" href="tel:+3532763010">Call now</a>
 <a class="btn btn-ghost" href="mailto:info@caseyshotelglengarriff.ie">Email us</a>
 </div></section>
@@ -199,8 +207,8 @@ section{scroll-margin-top:68px}
 <div class="card contact-list">
 <h3>Contact</h3>
 <ul>
-<li><strong>Tel:</strong> <a href="tel:+3532763010">+353 (0) 27 63010</a></li>
-<li><strong>Email:</strong> <a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a></li>
+<li><strong>Tel:</strong> <a href="tel:+3532763010">+353 (0) 27 63010</a><button class="copy" type="button" data-copy="+353 27 63010" title="Copy phone number" aria-label="Copy phone number"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></li>
+<li><strong>Email:</strong> <a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a><button class="copy" type="button" data-copy="info@caseyshotelglengarriff.ie" title="Copy email address" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></li>
 <li><strong>Address:</strong> The Village, Cappyaughna, Glengarriff, Co. Cork, P75 E925</li>
 </ul>
 <p style="margin:.8rem 0 0;color:var(--muted)">For bookings, please call us direct.</p>
@@ -219,12 +227,13 @@ section{scroll-margin-top:68px}
 
 <footer>
 <p>Casey's Hotel &middot; The Village, Glengarriff, Co. Cork, P75 E925<br>
-<a href="tel:+3532763010">+353 (0) 27 63010</a> &middot; <a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a></p>
+<a href="tel:+3532763010">+353 (0) 27 63010</a><button class="copy" type="button" data-copy="+353 27 63010" title="Copy phone number" aria-label="Copy phone number"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button> &middot; <a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a><button class="copy" type="button" data-copy="info@caseyshotelglengarriff.ie" title="Copy email address" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></p>
 <p>&copy; <span id="y"></span> Casey's Hotel, Glengarriff</p>
 </footer>
 
 <div class="lightbox" id="lb"><img alt=""></div>
 <script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const v=b.dataset.copy;try{await navigator.clipboard.writeText(v)}catch(e){const t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}b.classList.add('done');setTimeout(()=>b.classList.remove('done'),1500)}));
 const links=[...document.querySelectorAll('nav ul a')];
 const act=()=>{let cur='';links.forEach(a=>{const sec=document.querySelector(a.getAttribute('href'));if(sec&&sec.getBoundingClientRect().top<=110)cur=a.getAttribute('href')});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===cur))};
 addEventListener('scroll',act);act();
