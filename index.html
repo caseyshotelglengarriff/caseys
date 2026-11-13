@@ -76,6 +76,24 @@ section{padding:5rem 0}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:88vh;border-radius:6px}
 
+
+/* food hours */
+.hours{margin:1.4rem 0 1.6rem;padding:1.15rem 1.25rem;background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.hours h3{font-size:1.15rem;color:var(--red);margin:0 0 .55rem;text-shadow:none}
+.hours ul{list-style:none;margin:0;padding:0;font-size:.95rem;color:var(--ink)}
+.hours li{padding:.22rem 0;border-bottom:1px solid #f0ebe2}
+.hours li:last-child{border:0}
+
+/* recognised by */
+.recognised{padding:2.2rem 0;background:#fff;border-top:1px solid #efe6d6}
+.recognised .wrap{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+.recognised .eyebrow{color:var(--muted);margin:0}
+.recognised .logos{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap}
+.recognised a{display:flex;align-items:center;height:80px;opacity:.95;transition:opacity .2s,transform .2s}
+.recognised a:hover{opacity:1;transform:translateY(-1px)}
+.recognised img{max-height:80px;max-width:200px;width:auto;height:auto;object-fit:contain}
+@media(max-width:640px){.recognised a{height:68px}.recognised img{max-height:68px;max-width:170px}.recognised .logos{gap:1.6rem}}
+
 /* booking band */
 .book{background:var(--green);color:#fff;text-align:center}
 .book h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
@@ -198,6 +216,14 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 </div>
 </div></section>
 
+<section class="recognised" aria-label="Recognised by"><div class="wrap">
+<div class="eyebrow">Recognised by</div>
+<div class="logos">
+<a href="https://www.failteireland.ie/" target="_blank" rel="noopener noreferrer"><img src="images/badge-failte-ireland.png" alt="Fáilte Ireland Approved" width="186" height="200"></a>
+<a href="https://www.wildatlanticway.com/" target="_blank" rel="noopener noreferrer"><img src="images/badge-wild-atlantic-way.png" alt="Wild Atlantic Way" width="300" height="112"></a>
+</div>
+</div></section>
+
 <section id="about"><div class="wrap">
 <div class="intro">
 <div class="eyebrow" style="color:var(--red)">Welcome</div>
@@ -237,6 +263,18 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <div class="eyebrow" style="color:var(--red)">Food &amp; Bar</div>
 <h2>Irish food and a cosy bar</h2>
 <p>Our restaurant serves hearty Irish food and local seafood. Next door, the bar has an open fire, a patio for sunny days and live music.</p>
+<div class="hours">
+<h3>Food service hours</h3>
+<ul>
+<li>Monday 4pm to 9pm</li>
+<li>Tuesday 4pm to 9pm</li>
+<li>Wednesday 4pm to 9pm</li>
+<li>Thursday 4pm to 9pm</li>
+<li>Friday 4pm to 9pm</li>
+<li>Saturday 12.30pm to 9pm</li>
+<li>Sunday 12.30pm to 9pm</li>
+</ul>
+</div>
 <a class="btn btn-red" href="#book">Call for a table</a>
 </div>
 </div></section>
@@ -253,6 +291,12 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <img class="wide" src="images/main-course.jpg" alt="Main course" loading="lazy">
 <img src="images/seafood.jpg" alt="Seafood" loading="lazy">
 <img src="images/twin-room.jpg" alt="Twin room" loading="lazy">
+<img class="wide" src="images/lounge.jpg" alt="The lounge, with a piano and bookshelves" loading="lazy">
+<img src="images/bedroom.jpg" alt="Double bedroom with a seating area by the window" loading="lazy">
+<img src="images/bar-interior.jpg" alt="The bar, with stools and red walls" loading="lazy">
+<img class="wide" src="images/terrace.jpg" alt="Outdoor terrace beside Casey's Bar" loading="lazy">
+<img src="images/bar-wisteria.jpg" alt="Wisteria in bloom over the Casey's Bar sign" loading="lazy">
+<img src="images/dining-room.jpg" alt="The dining room, set for dinner" loading="lazy">
 </div>
 </div></section>
 
