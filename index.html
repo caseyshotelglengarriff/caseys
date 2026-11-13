@@ -91,14 +91,43 @@ section{padding:5rem 0}
 
 /* gallery */
 .gallery h2{text-align:center;font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:2rem}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:.7rem}
-.grid img{width:100%;height:100%;object-fit:cover;border-radius:10px;cursor:zoom-in;transition:opacity .2s}
-.grid img:hover{opacity:.88}
-.grid .tall{grid-row:span 2}.grid .wide{grid-column:span 2}
-@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}}
+.gallery-frame{position:relative;padding:0 3.6rem}
+.gallery-track{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-track img{flex:0 0 auto;height:300px;width:auto;min-width:200px;max-width:none;object-fit:cover;border-radius:10px;cursor:zoom-in;scroll-snap-align:start;transition:opacity .2s}
+.gallery-track img:hover{opacity:.88}
+.gallery-track img.wide{width:min(520px,70vw)}
+.gallery-track img.tall{width:210px}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border:1.5px solid #f0cf6e;border-radius:50%;background:rgba(107,20,20,.78);color:#f0cf6e;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 2px 10px rgba(0,0,0,.28);transition:background .2s,opacity .2s,transform .15s}
+.gallery-nav:hover:not(:disabled){background:rgba(107,20,20,.95);transform:translateY(-50%) scale(1.06)}
+.gallery-nav:focus-visible{outline:2px solid #f0cf6e;outline-offset:2px}
+.gallery-nav:disabled{opacity:.35;cursor:default}
+.gallery-nav.prev{left:0}
+.gallery-nav.next{right:0}
+.gallery-nav svg{width:22px;height:22px;display:block}
+@media(max-width:820px){
+  .gallery-frame{padding:0 3rem}
+  .gallery-track img{height:220px}
+  .gallery-track img.wide{width:min(360px,72vw)}
+  .gallery-track img.tall{width:160px}
+  .gallery-nav{width:42px;height:42px}
+  .gallery-nav svg{width:20px;height:20px}
+}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
 .lightbox.open{display:flex}
-.lightbox img{max-width:92vw;max-height:88vh;border-radius:6px}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:6px;cursor:default}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:52px;height:52px;border:1.5px solid #f0cf6e;border-radius:50%;background:rgba(107,20,20,.78);color:#f0cf6e;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 2px 10px rgba(0,0,0,.35);transition:background .2s,transform .15s}
+.lb-nav:hover{background:rgba(107,20,20,.95);transform:translateY(-50%) scale(1.06)}
+.lb-nav:focus-visible{outline:2px solid #f0cf6e;outline-offset:2px}
+.lb-prev{left:1.2rem}
+.lb-next{right:1.2rem}
+.lb-nav svg{width:24px;height:24px;display:block}
+@media(max-width:820px){
+  .lb-nav{width:44px;height:44px}
+  .lb-prev{left:.6rem}
+  .lb-next{right:.6rem}
+  .lightbox img{max-width:86vw}
+}
 
 
 /* food hours */
@@ -421,7 +450,9 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 
 <section id="gallery" class="gallery alt"><div class="wrap">
 <h2>Around the hotel</h2>
-<div class="grid">
+<div class="gallery-frame">
+<button type="button" class="gallery-nav prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="gallery-track" tabindex="0" aria-label="Hotel photo gallery">
 <img class="wide" src="images/entrance.jpg" alt="The hotel entrance" loading="lazy">
 <img class="tall" src="images/bar-taps.jpg" alt="Beer taps at the bar" loading="lazy">
 <img src="images/exterior-street.jpg" alt="Hotel on the village street" loading="lazy">
@@ -437,6 +468,8 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <img class="wide" src="images/terrace.jpg" alt="Outdoor terrace beside Casey's Bar" loading="lazy">
 <img src="images/bar-wisteria.jpg" alt="Wisteria in bloom over the Casey's Bar sign" loading="lazy">
 <img src="images/dining-room.jpg" alt="The dining room, set for dinner" loading="lazy">
+</div>
+<button type="button" class="gallery-nav next" aria-label="Next photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
 </div></section>
 
@@ -485,7 +518,11 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <p>&copy; <span id="y"></span> Casey's Hotel, Glengarriff</p>
 </footer>
 
-<div class="lightbox" id="lb"><img alt=""></div>
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Photograph">
+<button type="button" class="lb-nav lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<img alt="">
+<button type="button" class="lb-nav lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
 <script>
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const v=b.dataset.copy;try{await navigator.clipboard.writeText(v)}catch(e){const t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}b.classList.add('done');setTimeout(()=>b.classList.remove('done'),1500)}));
 const links=[...document.querySelectorAll('nav ul a')];
@@ -498,9 +535,63 @@ const setMenu=open=>{menu.classList.toggle('open',open);toggle.setAttribute('ari
 toggle.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
+const track=document.querySelector('.gallery-track');
+const gPrev=document.querySelector('.gallery-nav.prev');
+const gNext=document.querySelector('.gallery-nav.next');
+const photos=[...track.querySelectorAll('img')];
+const scrollToPhoto=img=>{
+  const dest=track.scrollLeft+(img.getBoundingClientRect().left-track.getBoundingClientRect().left);
+  track.scrollTo({left:Math.max(0,dest),behavior:'smooth'});
+};
+const stepGallery=dir=>{
+  const start=track.getBoundingClientRect().left;
+  if(dir>0){
+    const next=photos.find(img=>img.getBoundingClientRect().left>start+8);
+    if(next) scrollToPhoto(next);
+    else track.scrollTo({left:track.scrollWidth,behavior:'smooth'});
+  }else{
+    const prevs=photos.filter(img=>img.getBoundingClientRect().left<start-8);
+    const prev=prevs[prevs.length-1];
+    if(prev) scrollToPhoto(prev);
+    else track.scrollTo({left:0,behavior:'smooth'});
+  }
+};
+const updateGalleryNav=()=>{
+  const max=track.scrollWidth-track.clientWidth-2;
+  gPrev.disabled=track.scrollLeft<=2;
+  gNext.disabled=track.scrollLeft>=max;
+};
+photos.forEach(img=>img.addEventListener('load',updateGalleryNav));
+addEventListener('load',updateGalleryNav);
+gPrev.addEventListener('click',()=>stepGallery(-1));
+gNext.addEventListener('click',()=>stepGallery(1));
+track.addEventListener('scroll',updateGalleryNav,{passive:true});
+track.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'){e.preventDefault();stepGallery(-1)}
+  if(e.key==='ArrowRight'){e.preventDefault();stepGallery(1)}
+});
+addEventListener('resize',updateGalleryNav);
+updateGalleryNav();
+
 const lb=document.getElementById('lb'),li=lb.querySelector('img');
-document.querySelectorAll('.grid img').forEach(i=>i.onclick=()=>{li.src=i.src;li.alt=i.alt;lb.classList.add('open')});
-lb.onclick=()=>lb.classList.remove('open');
+let idx=0;
+const openLb=i=>{
+  idx=(i+photos.length)%photos.length;
+  li.src=photos[idx].src;
+  li.alt=photos[idx].alt;
+  lb.classList.add('open');
+};
+photos.forEach((img,i)=>img.addEventListener('click',()=>openLb(i)));
+lb.querySelector('.lb-prev').addEventListener('click',e=>{e.stopPropagation();openLb(idx-1)});
+lb.querySelector('.lb-next').addEventListener('click',e=>{e.stopPropagation();openLb(idx+1)});
+li.addEventListener('click',e=>e.stopPropagation());
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='ArrowLeft'){e.preventDefault();openLb(idx-1)}
+  if(e.key==='ArrowRight'){e.preventDefault();openLb(idx+1)}
+  if(e.key==='Escape')lb.classList.remove('open');
+});
 document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
