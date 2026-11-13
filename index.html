@@ -108,15 +108,14 @@ section{padding:5rem 0}
 .hours li{padding:.22rem 0;border-bottom:1px solid #f0ebe2}
 .hours li:last-child{border:0}
 
-/* recognised by */
-.recognised{padding:2.2rem 0;background:#fff;border-top:1px solid #efe6d6}
-.recognised .wrap{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
-.recognised .eyebrow{color:var(--muted);margin:0}
-.recognised .logos{display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap}
-.recognised a{display:flex;align-items:center;height:80px;opacity:.95;transition:opacity .2s,transform .2s}
-.recognised a:hover{opacity:1;transform:translateY(-1px)}
-.recognised img{max-height:80px;max-width:200px;width:auto;height:auto;object-fit:contain}
-@media(max-width:640px){.recognised a{height:68px}.recognised img{max-height:68px;max-width:170px}.recognised .logos{gap:1.6rem}}
+/* recognised by — compact, in the footer */
+footer .recognised{padding:0 0 1.5rem;margin:0 auto 1.5rem;max-width:1120px;border-bottom:1px solid #333}
+footer .recognised .eyebrow{color:#9a958c;margin:0 0 .85rem}
+footer .recognised .logos{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap}
+footer .recognised a{display:flex;align-items:center;justify-content:center;height:70px;padding:.45rem .85rem;background:#fff;border-radius:8px;opacity:.95;transition:opacity .2s,transform .2s}
+footer .recognised a:hover{opacity:1;transform:translateY(-1px)}
+footer .recognised img{max-height:60px;max-width:170px;width:auto;height:auto;object-fit:contain}
+@media(max-width:640px){footer .recognised a{height:58px}footer .recognised img{max-height:50px;max-width:150px}footer .recognised .logos{gap:1rem}}
 
 /* explore */
 .explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.2rem}
@@ -256,14 +255,6 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <h2>Georgina Campbell&rsquo;s 3-Star Hotel of the Year 2026</h2>
 <p>We are proud to be named Georgina Campbell&rsquo;s 3-Star Hotel of the Year 2026! Recognised by Ireland&rsquo;s longest-running independent hospitality awards for generations of genuine, hands-on hospitality, comfort, and great local food in the heart of Glengarriff.</p>
 <a class="btn btn-red" href="#book">Book Your Stay</a>
-</div>
-</div></section>
-
-<section class="recognised" aria-label="Recognised by"><div class="wrap">
-<div class="eyebrow">Recognised by</div>
-<div class="logos">
-<a href="https://www.failteireland.ie/" target="_blank" rel="noopener noreferrer"><img src="images/badge-failte-ireland.png" alt="Fáilte Ireland Approved" width="186" height="200"></a>
-<a href="https://www.wildatlanticway.com/" target="_blank" rel="noopener noreferrer"><img src="images/badge-wild-atlantic-way.png" alt="Wild Atlantic Way" width="300" height="112"></a>
 </div>
 </div></section>
 
@@ -482,6 +473,13 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 </div></section>
 
 <footer>
+<div class="recognised" aria-label="Recognised by">
+<div class="eyebrow">Recognised by</div>
+<div class="logos">
+<a href="https://www.failteireland.ie/" target="_blank" rel="noopener noreferrer"><img src="images/badge-failte-ireland.png" alt="Fáilte Ireland Approved" width="186" height="200"></a>
+<a href="https://www.wildatlanticway.com/" target="_blank" rel="noopener noreferrer"><img src="images/badge-wild-atlantic-way.png" alt="Wild Atlantic Way" width="300" height="112"></a>
+</div>
+</div>
 <p>Casey's Hotel &middot; The Village, Glengarriff, Co. Cork, P75 E925<br>
 <span class="nw"><a href="tel:+3532763010">+353 (0) 27 63010</a><button class="copy" type="button" data-copy="+353 27 63010" title="Copy phone number" aria-label="Copy phone number"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></span> &middot; <span class="nw"><a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a><button class="copy" type="button" data-copy="info@caseyshotelglengarriff.ie" title="Copy email address" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></span></p>
 <p>&copy; <span id="y"></span> Casey's Hotel, Glengarriff</p>
