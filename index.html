@@ -120,11 +120,17 @@ section{padding:5rem 0}
 
 /* explore */
 .explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.2rem}
-.explore-card{background:#fff;border-radius:14px;padding:1.35rem 1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.explore-card{background:#fff;border-radius:14px;padding:1.35rem 1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;flex-direction:column}
 .explore-card h3{font-size:1.25rem;color:var(--red);margin:0 0 .35rem;text-shadow:none}
 .explore-card p{margin:0;color:var(--muted)}
+.explore-card ul{list-style:none;padding:0;margin:.85rem 0 1rem;flex:1}
+.explore-card li{padding:.3rem 0 .3rem 1.05rem;position:relative;border-bottom:1px solid #f0ebe2;font-size:.95rem;line-height:1.4;color:var(--ink)}
+.explore-card li:last-child{border:0}
+.explore-card li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:var(--red)}
+.explore-card .more{margin-top:auto;align-self:flex-start;font-size:.88rem;font-weight:700;text-decoration:none}
+.explore-card .more:hover,.explore-card .more:focus-visible{text-decoration:underline}
 @media(max-width:820px){.explore-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:360px){.explore-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.explore-grid{grid-template-columns:1fr}}
 
 /* booking band */
 .book{background:var(--green);color:#fff;text-align:center}
@@ -327,14 +333,98 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <p>Glengarriff and the West Cork area is full of wonderful things to do for all interests, ages and budgets. Here are some ideas to help plan your stay.</p>
 </div>
 <div class="explore-grid">
-<article class="explore-card"><h3>The Beara Peninsula</h3><p>Days of enjoyment.</p></article>
-<article class="explore-card"><h3>Mizen Peninsula</h3><p>A day trip from our hotel.</p></article>
-<article class="explore-card"><h3>Glengarriff</h3><p>Ireland's garden heaven.</p></article>
-<article class="explore-card"><h3>Healy's Pass</h3><p>A spectacular drive.</p></article>
-<article class="explore-card"><h3>Sheep's Head</h3><p>Walks, trails &amp; fun.</p></article>
-<article class="explore-card"><h3>Garinish Island</h3><p>Stunning gardens.</p></article>
-<article class="explore-card"><h3>Gougane Barra</h3><p>Walking trails.</p></article>
-<article class="explore-card"><h3>On the water</h3><p>Things to do on the water.</p></article>
+<article class="explore-card">
+<h3>The Beara Peninsula</h3>
+<p>Days of enjoyment.</p>
+<ul>
+<li>Drive the Ring of Beara from Glengarriff towards Dursey and Kenmare</li>
+<li>Ride Ireland's only cable car to Dursey Island</li>
+<li>Visit the Allihies Copper Mine Museum</li>
+<li>Take the ferry to Bere Island for its forts, walks and heritage centre</li>
+<li>Walk or cycle a section of the Beara Way</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/beara-peninsula" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Mizen Peninsula</h3>
+<p>A day trip from our hotel.</p>
+<ul>
+<li>Visit the signal station at Mizen Head, Ireland's most south-westerly point</li>
+<li>Cross the arched footbridge and watch for whales, dolphins and seabirds</li>
+<li>Explore the keepers' quarters, engine room and Marconi radio room</li>
+<li>Swim at nearby Barleycove Beach</li>
+<li>See the Altar Wedge Tomb</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/cork/mizen-head" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Glengarriff</h3>
+<p>Ireland's garden heaven.</p>
+<ul>
+<li>Walk the trails in Glengarriff Woods Nature Reserve, free and open daily</li>
+<li>Follow the 3.1 km Esknamucky Walk through the woods</li>
+<li>Visit the Bamboo Park, with 30 kinds of bamboo and harbour views</li>
+<li>Stroll to the Blue Pool, a tidal inlet beside the village</li>
+<li>Take a boat to Garinish Island</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/glengarriff" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Healy's Pass</h3>
+<p>A spectacular drive.</p>
+<ul>
+<li>Drive the 12 km of hairpin bends between Adrigole and Lauragh</li>
+<li>Look out over Glanmore Lake and Kenmare Bay</li>
+<li>Cycle over the pass on the Beara Way Cycle Route</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/cork/the-healy-pass" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Sheep's Head</h3>
+<p>Walks, trails &amp; fun.</p>
+<ul>
+<li>Walk the Sheep's Head Way, or one of the shorter looped trails</li>
+<li>Follow the Lighthouse Loop to the lighthouse at the tip</li>
+<li>Look out for the Napoleonic signal tower, stone circles and old churches</li>
+<li>Cycle the peninsula on the Sheep's Head cycling route</li>
+<li>Watch for dolphins and whales off the headland</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/cork/sheep-s-head" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Garinish Island</h3>
+<p>Stunning gardens.</p>
+<ul>
+<li>Take the short ferry or waterbus from Glengarriff Harbour</li>
+<li>Watch for seals, and perhaps sea eagles, on the crossing</li>
+<li>Wander the Italian and walled gardens</li>
+<li>See the Grecian Temple overlooking the sea and the Caha Mountains</li>
+<li>Visit Bryce House (guided tours are limited in the shoulder season)</li>
+</ul>
+<a class="more" href="https://heritageireland.ie/places-to-visit/ilnacullin-garinish-island/" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>Gougane Barra</h3>
+<p>Walking trails.</p>
+<ul>
+<li>Choose one of six walking trails, from a short nature path to Slí na Sléibhe in the mountains</li>
+<li>Visit St Finbarr's Oratory on the lake island</li>
+<li>Walk beside the River Lee, which rises in these hills</li>
+<li>Take the 3 km scenic drive through the forest park</li>
+</ul>
+<a class="more" href="https://www.coillte.ie/site/gougane-barra-forest-park/" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
+<article class="explore-card">
+<h3>On the water</h3>
+<p>Things to do on the water.</p>
+<ul>
+<li>Kayak the sheltered coves of Glengarriff Bay from the old fishing pier</li>
+<li>Take the ferry to Garinish Island past the seal colony</li>
+<li>Visit the Blue Pool, a tidal inlet in the woods</li>
+<li>Look out for sea eagles on the harbour crossing</li>
+</ul>
+<a class="more" href="https://www.discoverireland.ie/cork/glengarriff-harbour" target="_blank" rel="noopener noreferrer">More info</a>
+</article>
 </div>
 </div></section>
 
