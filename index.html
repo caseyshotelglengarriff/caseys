@@ -4,12 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Casey's Hotel, Glengarriff, West Cork</title>
-<meta name="description" content="Casey's Hotel, a family run award-winning hotel in the heart of Glengarriff village, West Cork. Rooms, a restaurant and a cosy bar with live music.">
+<meta name="description" content="Family-run 3-star hotel in the heart of Glengarriff village, West Cork. Rooms, a restaurant and a cosy bar with live music. Georgina Campbell Hotel of the Year 2026.">
 <link rel="canonical" href="https://caseyshotelglengarriff.ie/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Casey's Hotel">
+<meta property="og:locale" content="en_IE">
+<meta property="og:url" content="https://caseyshotelglengarriff.ie/">
+<meta property="og:title" content="Casey's Hotel, Glengarriff, West Cork">
+<meta property="og:description" content="Family-run 3-star hotel in the heart of Glengarriff village, West Cork. Rooms, a restaurant and a cosy bar with live music. Georgina Campbell Hotel of the Year 2026.">
+<meta property="og:image" content="https://caseyshotelglengarriff.ie/images/exterior-front.jpg">
+<meta property="og:image:width" content="1152">
+<meta property="og:image:height" content="864">
+<meta property="og:image:alt" content="The front of Casey's Hotel and Casey's Bar on the village street in Glengarriff">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casey's Hotel, Glengarriff, West Cork">
+<meta name="twitter:description" content="Family-run 3-star hotel in the heart of Glengarriff village, West Cork. Rooms, a restaurant and a cosy bar with live music. Georgina Campbell Hotel of the Year 2026.">
+<meta name="twitter:image" content="https://caseyshotelglengarriff.ie/images/exterior-front.jpg">
+<link rel="preload" as="image" type="image/webp" href="images/opt/exterior-front-800.webp" imagesrcset="images/opt/exterior-front-800.webp 800w, images/opt/exterior-front-1152.webp 1152w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" href="fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playfair-display-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Casey's Hotel",
+  "url": "https://caseyshotelglengarriff.ie/",
+  "image": [
+    "https://caseyshotelglengarriff.ie/images/exterior-front.jpg",
+    "https://caseyshotelglengarriff.ie/images/opt/entrance-1600.jpg"
+  ],
+  "telephone": "+3532763010",
+  "email": "info@caseyshotelglengarriff.ie",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "The Village, Cappyaughna",
+    "addressLocality": "Glengarriff",
+    "addressRegion": "Co. Cork",
+    "addressCountry": "IE"
+  },
+  "starRating": {
+    "@type": "Rating",
+    "ratingValue": "3"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "525",
+    "bestRating": "5"
+  },
+  "award": "Georgina Campbell 3-Star Hotel of the Year 2026",
+  "checkinTime": "15:00",
+  "checkoutTime": "12:00",
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free parking",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free Wi-Fi",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Breakfast",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Restaurant",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Bar with live music",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Kid-friendly",
+      "value": true
+    }
+  ]
+}
+</script>
 <style>
+@font-face{font-family:Lato;font-style:normal;font-weight:400;font-display:swap;src:url(fonts/lato-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Lato;font-style:normal;font-weight:700;font-display:swap;src:url(fonts/lato-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/playfair-display-latin-500-italic.woff2) format("woff2")}
 :root{--red:#8b1e1e;--red-dark:#6b1414;--green:#2f4a3a;--cream:#faf6ef;--sand:#efe6d6;--ink:#2a2a2a;--muted:#6b665e}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,9 +130,11 @@ nav.solid .nav-toggle{color:#a87b1f}
 
 
 /* hero */
-.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;background:url(images/exterior-front.jpg) center/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.05) 35%,rgba(0,0,0,.7) 100%)}
-.hero .wrap{position:relative;padding-bottom:4.5rem;width:100%}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#1c1c1c}
+.hero-photo{position:absolute;inset:0;z-index:0;margin:0;display:block}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;max-width:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.05) 35%,rgba(0,0,0,.7) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:4.5rem;width:100%}
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;opacity:.9}
 .hero .eyebrow{color:#f0cf6e;font-weight:700}
 .hero h1{font-size:clamp(2.6rem,7vw,4.8rem);margin:.4rem 0}
@@ -82,8 +169,9 @@ section{padding:5rem 0}
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .feature.flip .text{order:2}
 .feature .pics{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.feature .pics > :first-child{grid-column:1/-1}
 .feature .pics img{width:100%;height:260px;object-fit:cover;border-radius:14px}
-.feature .pics img:first-child{grid-column:1/-1;height:320px}
+.feature .pics > :first-child img{height:320px}
 .feature h2{font-size:clamp(1.7rem,3vw,2.3rem)}
 .feature p{color:var(--muted)}
 .alt{background:var(--sand)}
@@ -94,10 +182,14 @@ section{padding:5rem 0}
 .gallery-frame{position:relative;padding:0 3.6rem}
 .gallery-track{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .gallery-track::-webkit-scrollbar{display:none}
-.gallery-track img{flex:0 0 auto;height:300px;width:auto;min-width:200px;max-width:none;object-fit:cover;border-radius:10px;cursor:zoom-in;scroll-snap-align:start;transition:opacity .2s}
-.gallery-track img:hover{opacity:.88}
-.gallery-track img.wide{width:min(520px,70vw)}
-.gallery-track img.tall{width:210px}
+.gallery-track picture{flex:0 0 auto;display:block;height:300px;min-width:200px;line-height:0;scroll-snap-align:start}
+.gallery-track img{height:300px;width:auto;min-width:200px;max-width:none;object-fit:cover;border-radius:10px;cursor:zoom-in;transition:opacity .2s}
+.gallery-track picture img{height:100%}
+.gallery-track picture:hover img{opacity:.88}
+.gallery-track picture.wide{width:min(520px,70vw)}
+.gallery-track picture.wide img{width:100%;height:100%}
+.gallery-track picture.tall{width:210px}
+.gallery-track picture.tall img{width:100%;height:100%}
 .gallery-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border:1.5px solid #f0cf6e;border-radius:50%;background:rgba(107,20,20,.78);color:#f0cf6e;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 2px 10px rgba(0,0,0,.28);transition:background .2s,opacity .2s,transform .15s}
 .gallery-nav:hover:not(:disabled){background:rgba(107,20,20,.95);transform:translateY(-50%) scale(1.06)}
 .gallery-nav:focus-visible{outline:2px solid #f0cf6e;outline-offset:2px}
@@ -107,9 +199,10 @@ section{padding:5rem 0}
 .gallery-nav svg{width:22px;height:22px;display:block}
 @media(max-width:820px){
   .gallery-frame{padding:0 3rem}
+  .gallery-track picture{height:220px}
   .gallery-track img{height:220px}
-  .gallery-track img.wide{width:min(360px,72vw)}
-  .gallery-track img.tall{width:160px}
+  .gallery-track picture.wide{width:min(360px,72vw)}
+  .gallery-track picture.tall{width:160px}
   .gallery-nav{width:42px;height:42px}
   .gallery-nav svg{width:20px;height:20px}
 }
@@ -282,7 +375,8 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <a class="call" href="#book">Call to book</a>
 </div></nav>
 
-<header class="hero" id="top"><a class="badge hero-pos" href="#award" aria-label="Georgina Campbell 3-Star Hotel of the Year 2026"><span class="rib l"></span><span class="rib r"></span><span class="m3d"><span class="face"><span class="src">Georgina Campbell</span><span class="stars">★★★</span><span class="lbl">Hotel of the Year</span><span class="yr">2026</span></span></span></a><div class="wrap">
+<main>
+<header class="hero" id="top"><picture class="hero-photo"><source type="image/webp" srcset="images/opt/exterior-front-800.webp 800w, images/opt/exterior-front-1152.webp 1152w" sizes="100vw"><img src="images/exterior-front.jpg" srcset="images/opt/exterior-front-800.jpg 800w, images/exterior-front.jpg 1152w" sizes="100vw" width="1152" height="864" alt="The front of Casey's Hotel and Casey's Bar on the village street in Glengarriff" decoding="async" fetchpriority="high"></picture><a class="badge hero-pos" href="#award"><span class="rib l"></span><span class="rib r"></span><span class="m3d"><span class="face"><span class="src">Georgina Campbell</span><span class="stars">★★★</span><span class="lbl">Hotel of the Year</span><span class="yr">2026</span></span></span></a><div class="wrap">
 <div class="eyebrow">Glengarriff &middot; West Cork &middot; Since the 1880s</div>
 <h1>Casey's Hotel</h1>
 <p class="tag">This family run award-winning hotel in the heart of Glengarriff village, with comfortable rooms, a restaurant and a cosy bar with live music.</p>
@@ -320,9 +414,9 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 
 <section id="rooms" class="alt"><div class="wrap feature">
 <div class="pics">
-<img src="images/double-room.jpg" alt="Double bedroom at Casey's Hotel" loading="lazy">
-<img src="images/twin-room.jpg" alt="Twin bedroom" loading="lazy">
-<img src="images/breakfast-in-bed.jpg" alt="Breakfast tray in the room" loading="lazy">
+<picture><source type="image/webp" srcset="images/opt/double-room-679.webp 679w" sizes="(max-width: 820px) calc(100vw - 2.5rem), 536px"><img src="images/double-room.jpg" sizes="(max-width: 820px) calc(100vw - 2.5rem), 536px" width="679" height="452" alt="Double bedroom at Casey's Hotel" loading="lazy" decoding="async" data-full="images/opt/double-room-679.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/twin-room-500.webp 500w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px"><img src="images/twin-room.jpg" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px" width="500" height="335" alt="Twin bedroom" loading="lazy" decoding="async" data-full="images/opt/twin-room-500.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/breakfast-in-bed-677.webp 677w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px"><img src="images/breakfast-in-bed.jpg" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px" width="677" height="453" alt="Breakfast tray in the room" loading="lazy" decoding="async" data-full="images/opt/breakfast-in-bed-677.webp"></picture>
 </div>
 <div class="text">
 <div class="eyebrow" style="color:var(--red)">Stay</div>
@@ -335,9 +429,9 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 
 <section id="dining"><div class="wrap feature flip">
 <div class="pics">
-<img src="images/bar-fireplace.jpg" alt="Meal and a pint by the fire in the bar" loading="lazy">
-<img src="images/seafood.jpg" alt="Seafood dish" loading="lazy">
-<img src="images/main-course.jpg" alt="Main course" loading="lazy">
+<picture><source type="image/webp" srcset="images/opt/bar-fireplace-500.webp 500w" sizes="(max-width: 820px) calc(100vw - 2.5rem), 536px"><img src="images/bar-fireplace.jpg" sizes="(max-width: 820px) calc(100vw - 2.5rem), 536px" width="500" height="335" alt="Meal and a pint by the fire in the bar" loading="lazy" decoding="async" data-full="images/opt/bar-fireplace-500.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/seafood-800.webp 800w, images/opt/seafood-900.webp 900w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px"><img src="images/seafood.jpg" srcset="images/opt/seafood-800.jpg 800w, images/seafood.jpg 900w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px" width="900" height="1200" alt="Seafood dish" loading="lazy" decoding="async" data-full="images/opt/seafood-900.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/main-course-800.webp 800w, images/opt/main-course-1200.webp 1200w, images/opt/main-course-1600.webp 1600w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px"><img src="images/main-course.jpg" srcset="images/opt/main-course-800.jpg 800w, images/opt/main-course-1200.jpg 1200w, images/main-course.jpg 1600w" sizes="(max-width: 820px) calc((100vw - 3.3rem) / 2), 260px" width="1600" height="1200" alt="A main course served at Casey's" loading="lazy" decoding="async" data-full="images/opt/main-course-1600.webp"></picture>
 </div>
 <div class="text">
 <div class="eyebrow" style="color:var(--red)">Food &amp; Bar</div>
@@ -376,7 +470,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Take the ferry to Bere Island for its forts, walks and heritage centre</li>
 <li>Walk or cycle a section of the Beara Way</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/beara-peninsula" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/beara-peninsula" target="_blank" rel="noopener noreferrer">More about the Beara Peninsula</a>
 </article>
 <article class="explore-card">
 <h3>Mizen Peninsula</h3>
@@ -388,7 +482,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Swim at nearby Barleycove Beach</li>
 <li>See the Altar Wedge Tomb</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/cork/mizen-head" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/cork/mizen-head" target="_blank" rel="noopener noreferrer">More about the Mizen Peninsula</a>
 </article>
 <article class="explore-card">
 <h3>Glengarriff</h3>
@@ -400,7 +494,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Stroll to the Blue Pool, a tidal inlet beside the village</li>
 <li>Take a boat to Garinish Island</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/glengarriff" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/glengarriff" target="_blank" rel="noopener noreferrer">More about Glengarriff</a>
 </article>
 <article class="explore-card">
 <h3>Healy's Pass</h3>
@@ -410,7 +504,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Look out over Glanmore Lake and Kenmare Bay</li>
 <li>Cycle over the pass on the Beara Way Cycle Route</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/cork/the-healy-pass" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/cork/the-healy-pass" target="_blank" rel="noopener noreferrer">More about Healy's Pass</a>
 </article>
 <article class="explore-card">
 <h3>Sheep's Head</h3>
@@ -422,7 +516,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Cycle the peninsula on the Sheep's Head cycling route</li>
 <li>Watch for dolphins and whales off the headland</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/cork/sheep-s-head" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/cork/sheep-s-head" target="_blank" rel="noopener noreferrer">More about Sheep's Head</a>
 </article>
 <article class="explore-card">
 <h3>Garinish Island</h3>
@@ -434,7 +528,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>See the Grecian Temple overlooking the sea and the Caha Mountains</li>
 <li>Visit Bryce House (guided tours are limited in the shoulder season)</li>
 </ul>
-<a class="more" href="https://heritageireland.ie/places-to-visit/ilnacullin-garinish-island/" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://heritageireland.ie/places-to-visit/ilnacullin-garinish-island/" target="_blank" rel="noopener noreferrer">More about Garinish Island</a>
 </article>
 <article class="explore-card">
 <h3>Gougane Barra</h3>
@@ -445,7 +539,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Walk beside the River Lee, which rises in these hills</li>
 <li>Take the 3 km scenic drive through the forest park</li>
 </ul>
-<a class="more" href="https://www.coillte.ie/site/gougane-barra-forest-park/" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.coillte.ie/site/gougane-barra-forest-park/" target="_blank" rel="noopener noreferrer">More about Gougane Barra</a>
 </article>
 <article class="explore-card">
 <h3>On the water</h3>
@@ -456,7 +550,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <li>Visit the Blue Pool, a tidal inlet in the woods</li>
 <li>Look out for sea eagles on the harbour crossing</li>
 </ul>
-<a class="more" href="https://www.discoverireland.ie/cork/glengarriff-harbour" target="_blank" rel="noopener noreferrer">More info</a>
+<a class="more" href="https://www.discoverireland.ie/cork/glengarriff-harbour" target="_blank" rel="noopener noreferrer">More about Glengarriff Harbour</a>
 </article>
 </div>
 </div></section>
@@ -466,21 +560,21 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <div class="gallery-frame">
 <button type="button" class="gallery-nav prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="gallery-track" tabindex="0" aria-label="Hotel photo gallery">
-<img class="wide" src="images/entrance.jpg" alt="The hotel entrance" loading="lazy">
-<img class="tall" src="images/bar-taps.jpg" alt="Beer taps at the bar" loading="lazy">
-<img src="images/exterior-street.jpg" alt="Hotel on the village street" loading="lazy">
-<img src="images/restaurant.jpg" alt="Restaurant table" loading="lazy">
-<img src="images/double-room.jpg" alt="Double room" loading="lazy">
-<img src="images/bar-fireplace.jpg" alt="By the fire in the bar" loading="lazy">
-<img class="wide" src="images/main-course.jpg" alt="Main course" loading="lazy">
-<img src="images/seafood.jpg" alt="Seafood" loading="lazy">
-<img src="images/twin-room.jpg" alt="Twin room" loading="lazy">
-<img class="wide" src="images/lounge.jpg" alt="The lounge, with a piano and bookshelves" loading="lazy">
-<img src="images/bedroom.jpg" alt="Double bedroom with a seating area by the window" loading="lazy">
-<img src="images/bar-interior.jpg" alt="The bar, with stools and red walls" loading="lazy">
-<img class="wide" src="images/terrace.jpg" alt="Outdoor terrace beside Casey's Bar" loading="lazy">
-<img src="images/bar-wisteria.jpg" alt="Wisteria in bloom over the Casey's Bar sign" loading="lazy">
-<img src="images/dining-room.jpg" alt="The dining room, set for dinner" loading="lazy">
+<picture class="wide"><source type="image/webp" srcset="images/opt/entrance-800.webp 800w, images/opt/entrance-1200.webp 1200w, images/opt/entrance-1600.webp 1600w" sizes="(max-width: 820px) 72vw, 520px"><img src="images/opt/entrance-1600.jpg" srcset="images/opt/entrance-800.jpg 800w, images/opt/entrance-1200.jpg 1200w, images/opt/entrance-1600.jpg 1600w" sizes="(max-width: 820px) 72vw, 520px" width="1600" height="1200" alt="The hotel entrance" loading="lazy" decoding="async" data-full="images/opt/entrance-1600.webp"></picture>
+<picture class="tall"><source type="image/webp" srcset="images/opt/bar-taps-540.webp 540w" sizes="(max-width: 820px) 160px, 210px"><img src="images/bar-taps.jpg" sizes="(max-width: 820px) 160px, 210px" width="540" height="1200" alt="Beer taps at the bar" loading="lazy" decoding="async" data-full="images/opt/bar-taps-540.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/exterior-street-500.webp 500w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/exterior-street.jpg" sizes="(max-width: 820px) 50vw, 400px" width="500" height="333" alt="Hotel on the village street" loading="lazy" decoding="async" data-full="images/opt/exterior-street-500.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/restaurant-679.webp 679w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/restaurant.jpg" sizes="(max-width: 820px) 50vw, 400px" width="679" height="452" alt="Restaurant table" loading="lazy" decoding="async" data-full="images/opt/restaurant-679.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/double-room-679.webp 679w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/double-room.jpg" sizes="(max-width: 820px) 50vw, 400px" width="679" height="452" alt="Double room" loading="lazy" decoding="async" data-full="images/opt/double-room-679.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/bar-fireplace-500.webp 500w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/bar-fireplace.jpg" sizes="(max-width: 820px) 50vw, 400px" width="500" height="335" alt="By the fire in the bar" loading="lazy" decoding="async" data-full="images/opt/bar-fireplace-500.webp"></picture>
+<picture class="wide"><source type="image/webp" srcset="images/opt/main-course-800.webp 800w, images/opt/main-course-1200.webp 1200w, images/opt/main-course-1600.webp 1600w" sizes="(max-width: 820px) 72vw, 520px"><img src="images/main-course.jpg" srcset="images/opt/main-course-800.jpg 800w, images/opt/main-course-1200.jpg 1200w, images/main-course.jpg 1600w" sizes="(max-width: 820px) 72vw, 520px" width="1600" height="1200" alt="A main course served at Casey's" loading="lazy" decoding="async" data-full="images/opt/main-course-1600.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/seafood-800.webp 800w, images/opt/seafood-900.webp 900w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/seafood.jpg" srcset="images/opt/seafood-800.jpg 800w, images/seafood.jpg 900w" sizes="(max-width: 820px) 50vw, 400px" width="900" height="1200" alt="Seafood" loading="lazy" decoding="async" data-full="images/opt/seafood-900.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/twin-room-500.webp 500w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/twin-room.jpg" sizes="(max-width: 820px) 50vw, 400px" width="500" height="335" alt="Twin room" loading="lazy" decoding="async" data-full="images/opt/twin-room-500.webp"></picture>
+<picture class="wide"><source type="image/webp" srcset="images/opt/lounge-800.webp 800w, images/opt/lounge-1200.webp 1200w, images/opt/lounge-1600.webp 1600w" sizes="(max-width: 820px) 72vw, 520px"><img src="images/lounge.jpg" srcset="images/opt/lounge-800.jpg 800w, images/opt/lounge-1200.jpg 1200w, images/lounge.jpg 1600w" sizes="(max-width: 820px) 72vw, 520px" width="1600" height="1067" alt="The lounge, with a piano and bookshelves" loading="lazy" decoding="async" data-full="images/opt/lounge-1600.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/bedroom-800.webp 800w, images/opt/bedroom-1200.webp 1200w, images/opt/bedroom-1600.webp 1600w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/bedroom.jpg" srcset="images/opt/bedroom-800.jpg 800w, images/opt/bedroom-1200.jpg 1200w, images/bedroom.jpg 1600w" sizes="(max-width: 820px) 50vw, 400px" width="1600" height="1067" alt="Double bedroom with a seating area by the window" loading="lazy" decoding="async" data-full="images/opt/bedroom-1600.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/bar-interior-800.webp 800w, images/opt/bar-interior-900.webp 900w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/bar-interior.jpg" srcset="images/opt/bar-interior-800.jpg 800w, images/bar-interior.jpg 900w" sizes="(max-width: 820px) 50vw, 400px" width="900" height="600" alt="The bar, with stools and red walls" loading="lazy" decoding="async" data-full="images/opt/bar-interior-900.webp"></picture>
+<picture class="wide"><source type="image/webp" srcset="images/opt/terrace-800.webp 800w, images/opt/terrace-1200.webp 1200w, images/opt/terrace-1600.webp 1600w" sizes="(max-width: 820px) 72vw, 520px"><img src="images/terrace.jpg" srcset="images/opt/terrace-800.jpg 800w, images/opt/terrace-1200.jpg 1200w, images/terrace.jpg 1600w" sizes="(max-width: 820px) 72vw, 520px" width="1600" height="899" alt="Outdoor terrace beside Casey's Bar" loading="lazy" decoding="async" data-full="images/opt/terrace-1600.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/bar-wisteria-800.webp 800w, images/opt/bar-wisteria-1200.webp 1200w, images/opt/bar-wisteria-1600.webp 1600w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/bar-wisteria.jpg" srcset="images/opt/bar-wisteria-800.jpg 800w, images/opt/bar-wisteria-1200.jpg 1200w, images/bar-wisteria.jpg 1600w" sizes="(max-width: 820px) 50vw, 400px" width="1600" height="745" alt="Wisteria in bloom over the Casey's Bar sign" loading="lazy" decoding="async" data-full="images/opt/bar-wisteria-1600.webp"></picture>
+<picture><source type="image/webp" srcset="images/opt/dining-room-800.webp 800w, images/opt/dining-room-900.webp 900w" sizes="(max-width: 820px) 50vw, 400px"><img src="images/dining-room.jpg" srcset="images/opt/dining-room-800.jpg 800w, images/dining-room.jpg 900w" sizes="(max-width: 820px) 50vw, 400px" width="900" height="524" alt="The dining room, set for dinner" loading="lazy" decoding="async" data-full="images/opt/dining-room-900.webp"></picture>
 </div>
 <button type="button" class="gallery-nav next" aria-label="Next photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
@@ -517,24 +611,25 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 </div>
 <div class="map"><iframe title="Map of Casey's Hotel, Glengarriff" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casey's+Hotel,+Glengarriff,+Co.+Cork,+P75+E925&output=embed"></iframe></div>
 </div></section>
+</main>
 
 <footer>
 <div class="recognised" aria-label="Recognised by">
 <div class="eyebrow">Recognised by</div>
 <div class="logos">
-<a href="https://www.failteireland.ie/" target="_blank" rel="noopener noreferrer"><img src="images/badge-failte-ireland.png" alt="Fáilte Ireland Approved" width="186" height="200"></a>
-<a href="https://www.wildatlanticway.com/" target="_blank" rel="noopener noreferrer"><img src="images/badge-wild-atlantic-way.png" alt="Wild Atlantic Way" width="300" height="112"></a>
+<a href="https://www.failteireland.ie/" target="_blank" rel="noopener noreferrer"><img src="images/badge-failte-ireland.png" alt="Fáilte Ireland Approved" width="186" height="200" loading="lazy" decoding="async"></a>
+<a href="https://www.wildatlanticway.com/" target="_blank" rel="noopener noreferrer"><img src="images/badge-wild-atlantic-way.png" alt="Wild Atlantic Way" width="300" height="112" loading="lazy" decoding="async"></a>
 </div>
 </div>
 <p>Casey's Hotel &middot; The Village, Glengarriff, Co. Cork, P75 E925<br>
 <span class="nw"><a href="tel:+3532763010">+353 (0) 27 63010</a><button class="copy" type="button" data-copy="+353 27 63010" title="Copy phone number" aria-label="Copy phone number"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></span> &middot; <span class="nw"><a href="mailto:info@caseyshotelglengarriff.ie">info@caseyshotelglengarriff.ie</a><button class="copy" type="button" data-copy="info@caseyshotelglengarriff.ie" title="Copy email address" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></span></p>
 <p>&copy; <span id="y"></span> Casey's Hotel, Glengarriff</p>
-<p class="site-credit"><a href="https://rehost.expert/" target="_blank" rel="noopener"><img src="images/rehost-expert-logo.svg" alt="" width="20" height="20"><span>Site by <b>rehost<span>.expert</span></b></span></a></p>
+<p class="site-credit"><a href="https://rehost.expert/" target="_blank" rel="noopener"><img src="images/rehost-expert-logo.svg" alt="" width="20" height="20" loading="lazy" decoding="async"><span>Site by <b>rehost<span>.expert</span></b></span></a></p>
 </footer>
 
 <div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Photograph">
 <button type="button" class="lb-nav lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<img alt="">
+<img alt="" width="1600" height="1200">
 <button type="button" class="lb-nav lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
 <script>
@@ -591,8 +686,11 @@ const lb=document.getElementById('lb'),li=lb.querySelector('img');
 let idx=0;
 const openLb=i=>{
   idx=(i+photos.length)%photos.length;
-  li.src=photos[idx].src;
-  li.alt=photos[idx].alt;
+  const srcImg=photos[idx];
+  li.src=srcImg.dataset.full||srcImg.currentSrc||srcImg.src;
+  li.alt=srcImg.alt;
+  if(srcImg.getAttribute('width')) li.width=srcImg.getAttribute('width');
+  if(srcImg.getAttribute('height')) li.height=srcImg.getAttribute('height');
   lb.classList.add('open');
 };
 photos.forEach((img,i)=>img.addEventListener('click',()=>openLb(i)));
