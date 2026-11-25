@@ -283,8 +283,9 @@ footer .recognised img{max-height:60px;max-width:170px;width:auto;height:auto;ob
 .map-facade:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .map-facade-btn{position:absolute;left:50%;top:auto;bottom:1.55rem;transform:translateX(-50%);z-index:1;background:var(--red);color:#fff;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;font-size:1rem;letter-spacing:.02em;box-shadow:0 4px 16px rgba(0,0,0,.28);pointer-events:none;white-space:nowrap}
 .map-facade:hover .map-facade-btn,.map-facade:focus-visible .map-facade-btn{background:var(--red-dark)}
-.map-attrib{position:absolute;right:.5rem;bottom:.4rem;z-index:1;font-size:.68rem;color:#222;background:rgba(255,255,255,.85);padding:.15rem .45rem;border-radius:4px;text-decoration:none;line-height:1.3}
-.map-attrib:hover,.map-attrib:focus-visible{text-decoration:underline}
+.map-credit{margin:.45rem 0 0;text-align:right;font-size:.75rem;line-height:1.4}
+.map-credit a{color:#4a4a4a;text-decoration:none;padding:.4rem 0;display:inline-block;min-height:24px}
+.map-credit a:hover,.map-credit a:focus-visible{text-decoration:underline}
 
 footer{background:#1f1f1f;color:#bbb;text-align:center;padding:2.5rem 1rem;font-size:.9rem}
 footer a{color:#ddd}
@@ -624,16 +625,16 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 </div>
 </div>
 <div class="map" id="map">
-<button type="button" class="map-facade" data-map-src="https://www.google.com/maps?q=Casey's+Hotel,+Glengarriff,+Co.+Cork,+P75+E925&output=embed" aria-label="Load interactive map of Casey's Hotel, Glengarriff">
+<button type="button" class="map-facade" data-map-src="https://www.google.com/maps?q=Casey's+Hotel,+Glengarriff,+Co.+Cork,+P75+E925&output=embed" aria-label="View map of Casey's Hotel, Glengarriff">
 <picture>
 <source type="image/webp" srcset="images/opt/map-glengarriff-800.webp 800w, images/opt/map-glengarriff-1600.webp 1600w" sizes="(max-width: 820px) calc(100vw - 2.5rem), 1120px">
 <img src="images/map-glengarriff.jpg" srcset="images/opt/map-glengarriff-800.jpg 800w, images/map-glengarriff.jpg 1600w" sizes="(max-width: 820px) calc(100vw - 2.5rem), 1120px" width="1600" height="680" alt="Map showing Casey's Hotel in the centre of Glengarriff village" loading="lazy" decoding="async">
 </picture>
 <span class="map-facade-btn">View map</span>
 </button>
-<a class="map-attrib" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap</a>
 <noscript><p style="margin:.8rem 1rem;text-align:center"><a href="https://www.google.com/maps?q=Casey's+Hotel,+Glengarriff,+Co.+Cork,+P75+E925" target="_blank" rel="noopener noreferrer">View Casey's Hotel on Google Maps</a></p></noscript>
 </div>
+<p class="map-credit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">Map data © OpenStreetMap</a></p>
 </div></section>
 </main>
 
@@ -724,19 +725,29 @@ const stepGallery=dir=>{
     else track.scrollTo({left:0,behavior:'smooth'});
   }
 };
-let galTick=false;
+let galTick=false,prevDis=null,nextDis=null;
 const updateGalleryNav=()=>{
   if(galTick) return;
   galTick=true;
   requestAnimationFrame(()=>{
     const max=track.scrollWidth-track.clientWidth-2;
-    gPrev.disabled=track.scrollLeft<=2;
-    gNext.disabled=track.scrollLeft>=max;
+    const sl=track.scrollLeft;
+    const disPrev=sl<=2;
+    const disNext=sl>=max;
+    if(disPrev!==prevDis){gPrev.disabled=disPrev;prevDis=disPrev}
+    if(disNext!==nextDis){gNext.disabled=disNext;nextDis=disNext}
     galTick=false;
   });
 };
-photos.forEach(img=>img.addEventListener('load',updateGalleryNav));
-addEventListener('load',updateGalleryNav);
+if('ResizeObserver' in window){
+  const ro=new ResizeObserver(updateGalleryNav);
+  ro.observe(track);
+  photos.forEach(img=>ro.observe(img));
+}else{
+  photos.forEach(img=>img.addEventListener('load',updateGalleryNav));
+  addEventListener('load',updateGalleryNav);
+  addEventListener('resize',updateGalleryNav);
+}
 gPrev.addEventListener('click',()=>stepGallery(-1));
 gNext.addEventListener('click',()=>stepGallery(1));
 track.addEventListener('scroll',updateGalleryNav,{passive:true});
@@ -744,7 +755,6 @@ track.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'){e.preventDefault();stepGallery(-1)}
   if(e.key==='ArrowRight'){e.preventDefault();stepGallery(1)}
 });
-addEventListener('resize',updateGalleryNav);
 updateGalleryNav();
 
 const lb=document.getElementById('lb'),li=lb.querySelector('img');
@@ -778,9 +788,7 @@ if(mapBtn){
     iframe.referrerPolicy='no-referrer-when-downgrade';
     iframe.src=mapBtn.dataset.mapSrc;
     iframe.allowFullscreen=true;
-    const attrib=wrap.querySelector('.map-attrib');
     mapBtn.remove();
-    if(attrib) attrib.remove();
     wrap.prepend(iframe);
     iframe.focus();
   };
