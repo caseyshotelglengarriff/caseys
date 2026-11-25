@@ -573,7 +573,7 @@ nav.solid ul a:hover,nav.solid ul a.active,nav.solid .brand:hover{color:#7d5a12}
 <section id="gallery" class="gallery alt"><div class="wrap">
 <h2>Around the hotel</h2>
 <div class="gallery-frame">
-<button type="button" class="gallery-nav prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button type="button" class="gallery-nav prev" aria-label="Previous photos" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="gallery-track" tabindex="0" aria-label="Hotel photo gallery">
 <picture class="wide"><source type="image/webp" srcset="images/opt/entrance-800.webp 800w, images/opt/entrance-1200.webp 1200w, images/opt/entrance-1600.webp 1600w" sizes="(max-width: 820px) 72vw, 520px"><img src="images/opt/entrance-1600.jpg" srcset="images/opt/entrance-800.jpg 800w, images/opt/entrance-1200.jpg 1200w, images/opt/entrance-1600.jpg 1600w" sizes="(max-width: 820px) 72vw, 520px" width="1600" height="1200" alt="The hotel entrance" loading="lazy" decoding="async" data-full="images/opt/entrance-1600.webp"></picture>
 <picture class="tall"><source type="image/webp" srcset="images/opt/bar-taps-540.webp 540w" sizes="(max-width: 820px) 160px, 210px"><img src="images/bar-taps.jpg" sizes="(max-width: 820px) 160px, 210px" width="540" height="1200" alt="Beer taps at the bar" loading="lazy" decoding="async" data-full="images/opt/bar-taps-540.webp"></picture>
@@ -725,7 +725,7 @@ const stepGallery=dir=>{
     else track.scrollTo({left:0,behavior:'smooth'});
   }
 };
-let galTick=false,prevDis=null,nextDis=null;
+let galTick=false,prevDis=true,nextDis=false;
 const updateGalleryNav=()=>{
   if(galTick) return;
   galTick=true;
@@ -739,15 +739,6 @@ const updateGalleryNav=()=>{
     galTick=false;
   });
 };
-if('ResizeObserver' in window){
-  const ro=new ResizeObserver(updateGalleryNav);
-  ro.observe(track);
-  photos.forEach(img=>ro.observe(img));
-}else{
-  photos.forEach(img=>img.addEventListener('load',updateGalleryNav));
-  addEventListener('load',updateGalleryNav);
-  addEventListener('resize',updateGalleryNav);
-}
 gPrev.addEventListener('click',()=>stepGallery(-1));
 gNext.addEventListener('click',()=>stepGallery(1));
 track.addEventListener('scroll',updateGalleryNav,{passive:true});
@@ -755,7 +746,6 @@ track.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'){e.preventDefault();stepGallery(-1)}
   if(e.key==='ArrowRight'){e.preventDefault();stepGallery(1)}
 });
-updateGalleryNav();
 
 const lb=document.getElementById('lb'),li=lb.querySelector('img');
 let idx=0;
