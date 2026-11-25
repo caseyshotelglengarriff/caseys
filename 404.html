@@ -28,7 +28,29 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:.95rem}
 footer a{color:inherit}
 </style>
 <script>
-location.replace("https://caseyshotelglengarriff.ie/");
+(function () {
+  var path = (location.pathname || "").toLowerCase();
+  var prefixes = [
+    "/glengarriff",
+    "/rooms",
+    "/bar-restaurant",
+    "/about-us",
+    "/caseys-hotel",
+    "/sheeps-head",
+    "/mizen-head",
+    "/on-the-water",
+    "/104-2",
+    "/16-2",
+    "/takeaway-menu"
+  ];
+  for (var i = 0; i < prefixes.length; i++) {
+    var p = prefixes[i];
+    if (path === p || path.indexOf(p + "/") === 0 || (p === "/takeaway-menu" && path.indexOf("/takeaway-menu") === 0)) {
+      location.replace("https://caseyshotelglengarriff.ie/");
+      return;
+    }
+  }
+})();
 </script>
 </head>
 <body>
