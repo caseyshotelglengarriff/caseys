@@ -28,24 +28,7 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:.95rem}
 footer a{color:inherit}
 </style>
 <script>
-(function () {
-  var path = (location.pathname || "").toLowerCase();
-  var rules = [
-    [/^\/(glengarriff|west-cork|garnish-island|gougane-barra|healys-pass|mizen-head|sheeps-head|on-the-water|16-2|104-2)(\/|$)/, "/#explore"],
-    [/^\/rooms(\/|$)/, "/#rooms"],
-    [/^\/(bar-restaurant|takeaway-menu-caseys-hotel|caseysbar|caseysrestaurant)(\/|$)/, "/#dining"],
-    [/menu/, "/#dining"],
-    [/^\/about-us(\/|$)/, "/#about"],
-    [/^\/contact/, "/#contact"],
-    [/^\/gallery/, "/#gallery"]
-  ];
-  for (var i = 0; i < rules.length; i++) {
-    if (rules[i][0].test(path)) {
-      location.replace(rules[i][1]);
-      return;
-    }
-  }
-})();
+location.replace("https://caseyshotelglengarriff.ie/");
 </script>
 </head>
 <body>
